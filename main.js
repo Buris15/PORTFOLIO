@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('hero-role').textContent = info.role;
     document.getElementById('hero-tagline').textContent = info.tagline;
     document.querySelector('.logo').textContent = info.name;
+    document.getElementById('hero-img').src = info.profilePic;
 
     const socialHtml = `
       <a href="${info.github}" target="_blank" class="social-btn">GitHub ↗</a>
