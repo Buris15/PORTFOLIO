@@ -8,83 +8,75 @@
 </head>
 <body>
 
-  <header class="mobile-header">
+  <header class="floating-header">
     <div class="logo">Adrian Lacsamana</div>
-    <button class="hamburger" aria-label="Toggle navigation">&#9776;</button>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Awards</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Toggle navigation">&#9776;</button>
+    </nav>
   </header>
 
-  <div class="layout-wrapper">
-    <aside class="sidebar">
-      <div class="sidebar-profile">
-        <img id="hero-img" src="" alt="Adrian Lacsamana Profile Picture">
-        <h1 id="hero-name">Adrian Lacsamana</h1>
-        <h2 id="hero-role">Future IT Professional</h2>
-        <p id="hero-tagline">Building responsive, data-driven web experiences.</p>
-        <div id="hero-socials" class="social-links"></div>
-      </div>
-      
-      <nav class="sidebar-nav">
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#certifications">Certifications</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </aside>
+  <main class="main-container">
+    <section id="home" class="hero-section">
+      <img id="hero-img" src="" alt="Adrian Lacsamana">
+      <h1 id="hero-name">Adrian Lacsamana</h1>
+      <h2 id="hero-role">Future IT Professional</h2>
+      <p id="hero-tagline">Building responsive, data-driven web experiences.</p>
+      <div id="hero-socials" class="social-links justify-center"></div>
+    </section>
 
-    <main class="content-area">
-      <section id="about">
-        <h2>About Me</h2>
-        <p>I am an aspiring IT professional studying core front-end and systems development technologies. I focus on structural semantics, responsive layout execution, and data-driven interactions to build robust applications.</p>
-      </section>
+    <section id="about" class="content-block">
+      <h2>About Me</h2>
+      <p>I am an aspiring IT professional studying core front-end and systems development technologies. I focus on structural semantics, responsive layout execution, and data-driven interactions to build robust applications.</p>
+    </section>
 
-      <section id="skills">
-        <h2>Technical & Soft Skills</h2>
-        <div id="skills-container" class="skills-grid"></div>
-      </section>
+    <section id="skills" class="content-block">
+      <h2>Technical & Soft Skills</h2>
+      <div id="skills-container" class="skills-grid"></div>
+    </section>
 
-      <section id="projects">
-        <h2>My Projects</h2>
-        <div id="project-filters" class="filters-container"></div>
-        <div id="projects-container" class="projects-grid"></div>
-      </section>
+    <section id="projects" class="content-block">
+      <h2>My Projects</h2>
+      <div id="project-filters" class="filters-container justify-center"></div>
+      <div id="projects-container" class="projects-grid"></div>
+    </section>
 
-      <section id="certifications">
-        <h2>Certifications & Awards</h2>
+    <div class="grid-2-col">
+      <section id="certifications" class="content-block">
+        <h2>Certifications</h2>
         <div id="certifications-container" class="timeline"></div>
       </section>
 
-      <section id="education">
-        <h2>Education & Experience</h2>
+      <section id="education" class="content-block">
+        <h2>Education</h2>
         <div id="education-container" class="timeline"></div>
       </section>
+    </div>
 
-      <section id="contact">
-        <h2>Get In Touch</h2>
-        <p>Want to collaborate? Send me a message below.</p>
-        <form id="contact-form" action="#" method="POST">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required>
-          
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required>
-          
-          <label for="message">Message:</label>
-          <textarea id="message" name="message" rows="4" required></textarea>
-          
-          <button type="submit">Send Message</button>
-        </form>
-      </section>
+    <section id="contact" class="content-block">
+      <h2>Get In Touch</h2>
+      <p style="margin-bottom: 2rem;">Want to collaborate? Send me a message below.</p>
+      <form id="contact-form" action="#" method="POST">
+        <div class="form-group">
+          <input type="text" id="name" name="name" placeholder="Your Name" required>
+          <input type="email" id="email" name="email" placeholder="Your Email" required>
+        </div>
+        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
 
-      <footer>
-        <div id="footer-socials" class="social-links justify-center"></div>
-        <p id="footer-text">&copy; 2026 Adrian Lacsamana. Built for Web Development 1.</p>
-      </footer>
-    </main>
-  </div>
+  <footer>
+    <div id="footer-socials" class="social-links justify-center"></div>
+    <p id="footer-text">&copy; 2026 Adrian Lacsamana. Built for Web Development 1.</p>
+  </footer>
 
   <script src="main.js"></script>
 </body>
