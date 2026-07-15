@@ -90,7 +90,7 @@
       "id": 4,
       "title": "Web-Based Online Enrollment System",
       "description": "The Web-Based Online Enrollment System enables students to enroll online while helping La Union National High School (LUNHS) manage enrollment faster, more accurately, and with less paperwork.",
-      "image": "./assets/Enrollment.PNG",
+      "image": "./assets/Enrollment.png",
       "tags": [
         "HTML",
         "CSS",
