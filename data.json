@@ -85,6 +85,18 @@
         "Prototype"
       ],
       "link": "https://www.figma.com/proto/ZRwbkHSZrPzS3Wg5yh0v4i/NOVA-SOLE?node-id=0-1"
+    },
+    {
+      "id": 3,
+      "title": "Web-Based Online Enrollment",
+      "description": "A high-fidelity Figma prototype for a modern footwear and lifestyle e-commerce platform.",
+      "image": "Enrollment.PNG",
+      "tags": [
+        "Figma",
+        "UI/UX",
+        "Prototype"
+      ],
+      "link": "https://github.com/Buris15/Enrollment"
     }
   ],
   "certifications": [
