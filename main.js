@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Mobile Menu Logic
   const hamburger = document.querySelector('.hamburger');
   const mobileMenu = document.querySelector('.mobile-menu');
 
@@ -12,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let allProjects = [];
 
-  // Fetch API Mapping
   fetch('./data.json')
     .then(response => response.json())
     .then(data => {
@@ -22,6 +20,11 @@ document.addEventListener('DOMContentLoaded', () => {
       allProjects = data.projects;
       renderProjectFilters(allProjects);
       renderProjects(allProjects);
+      
+      // Render the new creative works
+      renderGallery(data.graphics, 'graphics-container');
+      renderGallery(data.edits, 'edits-container');
+      renderGallery(data.pictures, 'pictures-container');
       
       renderEducation(data.education);
       renderCertifications(data.certifications);
@@ -34,11 +37,9 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('nav-github-btn').href = info.github;
     document.getElementById('about-text').textContent = info.tagline;
 
-    // Highlights the word "IT" in pink to mimic the "Web" highlight from the image
-    const highlightedRole = info.role.replace('IT', '<span style="color: var(--accent-color);">IT</span>');
+    const highlightedRole = info.role.replace('IT', '<span style="color: var(--primary-btn);">IT</span>');
     document.getElementById('hero-role').innerHTML = highlightedRole;
 
-    // Fixed: Full text for GitHub and Email instead of shortcuts
     const socialHtml = `
       <a href="${info.github}" target="_blank" aria-label="GitHub" class="social-link">
         <i class="fa-brands fa-github"></i> GitHub
@@ -108,6 +109,25 @@ document.addEventListener('DOMContentLoaded', () => {
         </article>
       `;
     });
+  }
+
+  // NEW FUNCTION: Renders images for Graphics, Edits, and Pictures
+  function renderGallery(items, containerId) {
+    const container = document.getElementById(containerId);
+    if (!items || !container) return;
+    
+    let html = '';
+    items.forEach(item => {
+      html += `
+        <div class="gallery-item">
+          <img src="${item.image}" alt="${item.title}" onerror="this.src='https://via.placeholder.com/300?text=No+Image'">
+          <div class="gallery-overlay">
+            <span>${item.title}</span>
+          </div>
+        </div>
+      `;
+    });
+    container.innerHTML = html;
   }
 
   function renderEducation(educationData) {
