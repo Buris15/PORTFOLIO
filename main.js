@@ -1,29 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   
-  // --- 1. DARK/LIGHT MODE THEME TOGGLE ---
-  const themeToggle = document.getElementById('theme-toggle');
-  const body = document.documentElement;
-  
-  // Check local storage for saved theme
-  const savedTheme = localStorage.getItem('portfolio-theme');
-  if (savedTheme === 'light') {
-    body.setAttribute('data-theme', 'light');
-    themeToggle.textContent = '🌙';
-  }
-
-  themeToggle.addEventListener('click', () => {
-    if (body.hasAttribute('data-theme')) {
-      body.removeAttribute('data-theme');
-      themeToggle.textContent = '☀️';
-      localStorage.setItem('portfolio-theme', 'dark');
-    } else {
-      body.setAttribute('data-theme', 'light');
-      themeToggle.textContent = '🌙';
-      localStorage.setItem('portfolio-theme', 'light');
-    }
-  });
-
-  // --- 2. MOBILE MENU ---
+  // --- 1. MOBILE MENU ---
   const hamburger = document.querySelector('.hamburger');
   const navLinks = document.querySelector('.nav-links');
 
@@ -37,17 +14,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Global variable to store projects for filtering
   let allProjects = [];
 
-  // --- 3. FETCH DATA ---
+  // --- 2. FETCH DATA ---
   fetch('./data.json')
     .then(response => response.json())
     .then(data => {
       renderPersonalInfo(data.personalInfo);
       renderSkills(data.skills);
       
-      // Store projects globally and render filters/grid
       allProjects = data.projects;
       renderProjectFilters(allProjects);
       renderProjects(allProjects);
@@ -58,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .catch(error => console.error('Data pipeline error:', error));
 
 
-  // --- 4. RENDER FUNCTIONS ---
+  // --- 3. RENDER FUNCTIONS ---
 
   function renderPersonalInfo(info) {
     document.getElementById('hero-name').textContent = info.name;
@@ -66,7 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('hero-tagline').textContent = info.tagline;
     document.querySelector('.logo').textContent = info.name;
 
-    // Generate Social Links
     const socialHtml = `
       <a href="${info.github}" target="_blank" class="social-btn">GitHub ↗</a>
       <a href="mailto:${info.email}" class="social-btn">Email ✉</a>
@@ -85,33 +59,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Generate Filter Buttons dynamically based on tags
   function renderProjectFilters(projects) {
     const filterContainer = document.getElementById('project-filters');
     
-    // Extract unique tags using Set
     const uniqueTags = new Set();
     projects.forEach(p => p.tags.forEach(tag => uniqueTags.add(tag)));
     
-    // Create 'All' button
     let filterHtml = `<button class="filter-btn active" data-filter="all">All</button>`;
     
-    // Create tag buttons
     uniqueTags.forEach(tag => {
       filterHtml += `<button class="filter-btn" data-filter="${tag}">${tag}</button>`;
     });
     
     filterContainer.innerHTML = filterHtml;
 
-    // Add click listeners to filter buttons
     const filterButtons = document.querySelectorAll('.filter-btn');
     filterButtons.forEach(btn => {
       btn.addEventListener('click', (e) => {
-        // Remove active class from all, add to clicked
         filterButtons.forEach(b => b.classList.remove('active'));
         e.target.classList.add('active');
         
-        // Filter logic
         const filterValue = e.target.getAttribute('data-filter');
         if (filterValue === 'all') {
           renderProjects(allProjects);
@@ -125,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function renderProjects(projectsData) {
     const container = document.getElementById('projects-container');
-    container.innerHTML = ''; // Clear current projects
+    container.innerHTML = ''; 
     
     projectsData.forEach(project => {
       const tags = project.tags.map(t => `<span class="tag">${t}</span>`).join('');
@@ -143,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function renderCertifications(certsData) {
     const container = document.getElementById('certifications-container');
-    if (!certsData) return; // Failsafe if missing
+    if (!certsData) return;
     
     certsData.forEach(cert => {
       container.innerHTML += `
