@@ -114,7 +114,7 @@
       ],
       "link": "https://github.com/Buris15/Guidance"
     },
-     {
+    {
       "id": 6,
       "title": "Qr-Code Attendace System",
       "description": "The QR Code Attendance System enables La Union National High School (LUNHS) to record student attendance quickly using QR codes. It improves attendance tracking, reduces manual recording, and provides accurate attendance records.",
@@ -153,5 +153,17 @@
       "period": "2025",
       "description": "Completed a 10-day OJT as a Graphic Designer, Organizer, and Salesman. Created promotional graphics, organized products, and assisted customers while developing creativity, communication, teamwork, and customer service skills."
     }
+  ],
+  "graphics": [
+    { "id": 1, "title": "Poster Design", "image": "graphic1.jpg" },
+    { "id": 2, "title": "Logo Concept", "image": "graphic2.jpg" }
+  ],
+  "edits": [
+    { "id": 1, "title": "Color Grading", "image": "edit1.jpg" },
+    { "id": 2, "title": "Manipulation", "image": "edit2.jpg" }
+  ],
+  "pictures": [
+    { "id": 1, "title": "Landscape View", "image": "pic1.jpg" },
+    { "id": 2, "title": "Macro Shot", "image": "pic2.jpg" }
   ]
 }
