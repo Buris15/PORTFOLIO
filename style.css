@@ -29,7 +29,7 @@ html {
 
 body {
   font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
-  background-image: linear-gradient(135deg, #003366 0%, #000080 100%);
+  background-color: black;
   color: var(--text-main);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
