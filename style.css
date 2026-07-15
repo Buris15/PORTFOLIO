@@ -39,19 +39,18 @@ a {
 
 .navbar-wrapper {
   position: fixed;
-  top: 0; /* Removes the gap at the top */
+  top: 0;
   left: 0;
   width: 100%;
   display: flex;
   justify-content: center;
   z-index: 1000;
   padding: 0 1.5rem;
-  
-  /* Creates the solid/blurry glassmorphism effect */
-  background-color: rgba(24, 24, 27, 0.85); /* Semi-transparent dark background */
-  backdrop-filter: blur(12px); /* Blurs the content scrolling underneath */
-  -webkit-backdrop-filter: blur(12px); /* Safari support */
-  border-bottom: 1px solid var(--border-color); /* Clean line at the bottom */
+
+  background-color: rgba(24, 24, 27, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .navbar {
@@ -61,9 +60,8 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 0; /* Adjusted padding for a standard header feel */
+  padding: 1rem 0;
   
-  /* Removed the pill shape, borders, and background from the inner container */
   background-color: transparent; 
   border-radius: 0;
   border: none;
@@ -73,6 +71,12 @@ a {
   font-weight: 600;
   font-size: 1rem;
   letter-spacing: 0.5px;
+  color: var(--navbar-text);
+  transition: color var(--transition);
+}
+
+.logo:hover {
+  color: var(--primary-btn);
 }
 
 .nav-links {
