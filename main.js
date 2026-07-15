@@ -1,23 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // --- 1. MOBILE MENU LOGIC ---
+  // Mobile Menu Logic
   const hamburger = document.querySelector('.hamburger');
   const mobileMenu = document.querySelector('.mobile-menu');
 
   if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', () => {
-      mobileMenu.classList.toggle('active');
-    });
-
+    hamburger.addEventListener('click', () => mobileMenu.classList.toggle('active'));
     mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.remove('active');
-      });
+      link.addEventListener('click', () => mobileMenu.classList.remove('active'));
     });
   }
 
   let allProjects = [];
 
-  // --- 2. FETCH DATA ---
+  // Fetch API Mapping
   fetch('./data.json')
     .then(response => response.json())
     .then(data => {
@@ -28,21 +23,29 @@ document.addEventListener('DOMContentLoaded', () => {
       renderProjectFilters(allProjects);
       renderProjects(allProjects);
       
-      renderCertifications(data.certifications);
       renderEducation(data.education);
+      renderCertifications(data.certifications);
     })
     .catch(error => console.error('Data pipeline error:', error));
 
-  // --- 3. RENDER FUNCTIONS ---
   function renderPersonalInfo(info) {
     document.getElementById('hero-name').textContent = info.name;
     document.getElementById('hero-img').src = info.profilePic;
     document.getElementById('nav-github-btn').href = info.github;
+    document.getElementById('about-text').textContent = info.tagline;
 
-    // Using text instead of actual icons for simplicity, but you can swap these for font-awesome icons <i>
+    // Highlights the word "IT" in pink to mimic the "Web" highlight from the image
+    const highlightedRole = info.role.replace('IT', '<span style="color: var(--accent-color);">IT</span>');
+    document.getElementById('hero-role').innerHTML = highlightedRole;
+
+    // Fixed: Full text for GitHub and Email instead of shortcuts
     const socialHtml = `
-      <a href="${info.github}" target="_blank" aria-label="GitHub">GH</a>
-      <a href="mailto:${info.email}" aria-label="Email">EM</a>
+      <a href="${info.github}" target="_blank" aria-label="GitHub" class="social-link">
+        <i class="fa-brands fa-github"></i> GitHub
+      </a>
+      <a href="mailto:${info.email}" aria-label="Email" class="social-link">
+        <i class="fa-solid fa-envelope"></i> Email
+      </a>
     `;
     document.getElementById('hero-socials').innerHTML = socialHtml;
   }
@@ -50,14 +53,9 @@ document.addEventListener('DOMContentLoaded', () => {
   function renderSkills(skillsData) {
     const container = document.getElementById('skills-container');
     if (!container) return;
-
     skillsData.forEach(group => {
       const items = group.items.map(i => `<li>${i}</li>`).join('');
-      container.innerHTML += `
-        <article class="skill-category">
-          <h3>${group.category}</h3>
-          <ul>${items}</ul>
-        </article>`;
+      container.innerHTML += `<article class="skill-category"><h3>${group.category}</h3><ul>${items}</ul></article>`;
     });
   }
 
@@ -68,8 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const uniqueTags = new Set();
     projects.forEach(p => p.tags.forEach(tag => uniqueTags.add(tag)));
     
-    let filterHtml = `<button class="tag active" data-filter="all" style="cursor:pointer; border-color:var(--primary-color);">All</button>`;
-    
+    let filterHtml = `<button class="tag active" data-filter="all" style="cursor:pointer; background: var(--primary-btn); color: white; border-color: var(--primary-btn);">All</button>`;
     uniqueTags.forEach(tag => {
       filterHtml += `<button class="tag" data-filter="${tag}" style="cursor:pointer;">${tag}</button>`;
     });
@@ -79,16 +76,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const filterButtons = filterContainer.querySelectorAll('button');
     filterButtons.forEach(btn => {
       btn.addEventListener('click', (e) => {
-        filterButtons.forEach(b => b.style.borderColor = 'var(--border-color)');
-        e.target.style.borderColor = 'var(--primary-color)';
+        filterButtons.forEach(b => {
+          b.style.background = 'var(--bg-color)';
+          b.style.color = 'var(--text-muted)';
+          b.style.borderColor = 'var(--border-color)';
+        });
+        e.target.style.background = 'var(--primary-btn)';
+        e.target.style.color = 'white';
+        e.target.style.borderColor = 'var(--primary-btn)';
         
         const filterValue = e.target.getAttribute('data-filter');
-        if (filterValue === 'all') {
-          renderProjects(allProjects);
-        } else {
-          const filtered = allProjects.filter(p => p.tags.includes(filterValue));
-          renderProjects(filtered);
-        }
+        const filtered = filterValue === 'all' ? allProjects : allProjects.filter(p => p.tags.includes(filterValue));
+        renderProjects(filtered);
       });
     });
   }
@@ -97,7 +96,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('projects-container');
     if (!container) return;
     container.innerHTML = ''; 
-    
     projectsData.forEach(project => {
       const tags = project.tags.map(t => `<span class="tag">${t}</span>`).join('');
       container.innerHTML += `
@@ -106,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <h3>${project.title}</h3>
           <p style="color: var(--text-muted); font-size: 0.95rem;">${project.description}</p>
           <div class="project-tags">${tags}</div>
-          <a href="${project.link}" target="_blank" style="color: var(--primary-color); font-weight: 600;">View Project &rarr;</a>
+          <a href="${project.link}" target="_blank" style="color: var(--primary-btn); font-weight: 600; font-size: 0.9rem;">View Project &rarr;</a>
         </article>
       `;
     });
@@ -119,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
       container.innerHTML += `
         <div class="timeline-item">
           <h4>${edu.title}</h4>
-          <span>${edu.institution} • ${edu.period}</span>
+          <span>${edu.institution} | ${edu.period}</span>
           <p style="color: var(--text-muted); font-size: 0.95rem;">${edu.description}</p>
         </div>
       `;
@@ -133,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
       container.innerHTML += `
         <div class="timeline-item">
           <h4>${cert.title}</h4>
-          <span>${cert.issuer} • ${cert.date}</span>
+          <span>${cert.issuer} | ${cert.date}</span>
           <p style="color: var(--text-muted); font-size: 0.95rem;">${cert.description}</p>
         </div>
       `;
