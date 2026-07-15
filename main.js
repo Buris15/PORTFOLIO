@@ -1,16 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // --- 1. MOBILE MENU ---
+  // --- 1. MOBILE MENU LOGIC ---
   const hamburger = document.querySelector('.hamburger');
-  const navLinks = document.querySelector('.nav-links');
+  const mobileMenu = document.querySelector('.mobile-menu');
 
-  if (hamburger && navLinks) {
+  if (hamburger && mobileMenu) {
     hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
+      mobileMenu.classList.toggle('active');
     });
 
-    navLinks.querySelectorAll('a').forEach(link => {
+    mobileMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
+        mobileMenu.classList.remove('active');
       });
     });
   }
@@ -36,28 +36,28 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- 3. RENDER FUNCTIONS ---
   function renderPersonalInfo(info) {
     document.getElementById('hero-name').textContent = info.name;
-    document.getElementById('hero-role').textContent = info.role;
-    document.getElementById('hero-tagline').textContent = info.tagline;
     document.getElementById('hero-img').src = info.profilePic;
+    document.getElementById('nav-github-btn').href = info.github;
 
+    // Using text instead of actual icons for simplicity, but you can swap these for font-awesome icons <i>
     const socialHtml = `
-      <a href="${info.github}" target="_blank" class="social-btn">GitHub ↗</a>
-      <a href="mailto:${info.email}" class="social-btn">Email ✉</a>
+      <a href="${info.github}" target="_blank" aria-label="GitHub">GH</a>
+      <a href="mailto:${info.email}" aria-label="Email">EM</a>
     `;
     document.getElementById('hero-socials').innerHTML = socialHtml;
-    
-    const footerSocials = document.getElementById('footer-socials');
-    if (footerSocials) footerSocials.innerHTML = socialHtml;
-
-    const footerText = document.getElementById('footer-text');
-    if (footerText) footerText.innerHTML = `&copy; ${new Date().getFullYear()} ${info.name}. Built for Web Development 1.`;
   }
 
   function renderSkills(skillsData) {
     const container = document.getElementById('skills-container');
+    if (!container) return;
+
     skillsData.forEach(group => {
       const items = group.items.map(i => `<li>${i}</li>`).join('');
-      container.innerHTML += `<article class="skill-category"><h3>${group.category}</h3><ul>${items}</ul></article>`;
+      container.innerHTML += `
+        <article class="skill-category">
+          <h3>${group.category}</h3>
+          <ul>${items}</ul>
+        </article>`;
     });
   }
 
@@ -68,19 +68,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const uniqueTags = new Set();
     projects.forEach(p => p.tags.forEach(tag => uniqueTags.add(tag)));
     
-    let filterHtml = `<button class="filter-btn active" data-filter="all">All</button>`;
+    let filterHtml = `<button class="tag active" data-filter="all" style="cursor:pointer; border-color:var(--primary-color);">All</button>`;
     
     uniqueTags.forEach(tag => {
-      filterHtml += `<button class="filter-btn" data-filter="${tag}">${tag}</button>`;
+      filterHtml += `<button class="tag" data-filter="${tag}" style="cursor:pointer;">${tag}</button>`;
     });
     
-    filterContainer.innerHTML = filterHtml;
+    filterContainer.innerHTML = `<div style="display:flex; gap:0.5rem; margin-bottom: 1.5rem; flex-wrap:wrap;">${filterHtml}</div>`;
 
-    const filterButtons = document.querySelectorAll('.filter-btn');
+    const filterButtons = filterContainer.querySelectorAll('button');
     filterButtons.forEach(btn => {
       btn.addEventListener('click', (e) => {
-        filterButtons.forEach(b => b.classList.remove('active'));
-        e.target.classList.add('active');
+        filterButtons.forEach(b => b.style.borderColor = 'var(--border-color)');
+        e.target.style.borderColor = 'var(--primary-color)';
         
         const filterValue = e.target.getAttribute('data-filter');
         if (filterValue === 'all') {
@@ -104,25 +104,10 @@ document.addEventListener('DOMContentLoaded', () => {
         <article class="project-card">
           <img src="${project.image}" alt="${project.title}">
           <h3>${project.title}</h3>
-          <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;">${project.description}</p>
-          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">${tags}</div>
-          <a href="${project.link}" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600;">View Code &rarr;</a>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">${project.description}</p>
+          <div class="project-tags">${tags}</div>
+          <a href="${project.link}" target="_blank" style="color: var(--primary-color); font-weight: 600;">View Project &rarr;</a>
         </article>
-      `;
-    });
-  }
-
-  function renderCertifications(certsData) {
-    const container = document.getElementById('certifications-container');
-    if (!certsData || !container) return;
-    
-    certsData.forEach(cert => {
-      container.innerHTML += `
-        <div class="timeline-item">
-          <strong>${cert.title}</strong>
-          <span>${cert.issuer} | ${cert.date}</span>
-          <p style="margin-top: 0.5rem; font-size: 0.95rem;">${cert.description}</p>
-        </div>
       `;
     });
   }
@@ -133,9 +118,23 @@ document.addEventListener('DOMContentLoaded', () => {
     educationData.forEach(edu => {
       container.innerHTML += `
         <div class="timeline-item">
-          <strong>${edu.title}</strong>
-          <span>${edu.institution} | ${edu.period}</span>
-          <p style="margin-top: 0.5rem; font-size: 0.95rem;">${edu.description}</p>
+          <h4>${edu.title}</h4>
+          <span>${edu.institution} • ${edu.period}</span>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">${edu.description}</p>
+        </div>
+      `;
+    });
+  }
+
+  function renderCertifications(certsData) {
+    const container = document.getElementById('certifications-container');
+    if (!certsData || !container) return;
+    certsData.forEach(cert => {
+      container.innerHTML += `
+        <div class="timeline-item">
+          <h4>${cert.title}</h4>
+          <span>${cert.issuer} • ${cert.date}</span>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">${cert.description}</p>
         </div>
       `;
     });
