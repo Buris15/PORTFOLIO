@@ -315,14 +315,6 @@ a {
   cursor: default;
 }
 
-.skill-category li:hover {
-  background: var(--primary-btn);
-  color: #ffffff;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
-  border-color: var(--primary-btn);
-}
-
 .skill-category li::before {
   content: '';
   width: 6px;
