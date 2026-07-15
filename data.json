@@ -104,7 +104,7 @@
       "id": 5,
       "title": "Guidance Management System",
       "description": "The Guidance Management System helps La Union National High School (LUNHS) manage student guidance records, counseling services, and appointments efficiently. It improves record organization, accessibility, and the delivery of guidance services.",
-      "image": "./assets/Guidance.PNG",
+      "image": "./assets/Guidance.png",
       "tags": [
         "HTML",
         "CSS",
