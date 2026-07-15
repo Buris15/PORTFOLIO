@@ -88,9 +88,23 @@
     },
     {
       "id": 4,
-      "title": "Web-Based Online Enrollment",
+      "title": "Web-Based Online Enrollment System",
       "description": "The Web-Based Online Enrollment System enables students to enroll online while helping La Union National High School (LUNHS) manage enrollment faster, more accurately, and with less paperwork.",
       "image": "Enrollment.PNG",
+      "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "SQL",
+        "PHP"
+      ],
+      "link": "https://github.com/Buris15/Enrollment"
+    },
+    {
+      "id": 5,
+      "title": "Guidance Management System",
+      "description": "The Guidance Management System helps La Union National High School (LUNHS) manage student guidance records, counseling services, and appointments efficiently. It improves record organization, accessibility, and the delivery of guidance services.",
+      "image": "Guidance.PNG",
       "tags": [
         "HTML",
         "CSS",
