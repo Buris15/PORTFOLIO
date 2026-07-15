@@ -73,6 +73,13 @@
         "SQL"
       ],
       "link": "https://github.com/Buris15/LMS"
+    },
+    {
+      "id": 2,
+      "title": "Nova Sole | FIGMA",
+      "description": "Nova Sole is a high-fidelity Figma prototype for a modern footwear and lifestyle e-commerce platform.",
+      "image": "Nova.png",
+      "link": "https://www.figma.com/proto/ZRwbkHSZrPzS3Wg5yh0v4i/NOVA-SOLE?node-id=0-1"
     }
   ],
   "certifications": [
