@@ -112,18 +112,16 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // NEW FUNCTION: Renders images for Graphics, Edits, and Pictures
+  // NEW FUNCTION: Renders images for Graphics, Edits, and Pictures (No Titles)
   function renderGallery(items, containerId) {
     const container = document.getElementById(containerId);
     if (!items || !container) return;
     
     let html = '';
-    items.forEach(item => {
+    items.forEach((item, index) => {
       html += `
         <div class="gallery-item">
-          <img src="${item.image}" alt="${item.title}" onerror="this.src='https://via.placeholder.com/300?text=No+Image'">
-          <div class="gallery-overlay">
-            <span>${item.title}</span>
-          </div>
+          <img src="${item.image}" alt="Creative Work ${index + 1}" onerror="this.src='https://via.placeholder.com/300?text=No+Image'">
         </div>
       `;
     });
