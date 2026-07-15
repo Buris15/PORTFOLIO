@@ -1,0 +1,41 @@
+{
+  "personalInfo": {
+    "name": "Adrian Lacsamana",
+    "role": "Future IT Professional",
+    "tagline": "Building responsive, data-driven web experiences.",
+    "email": "adrian.lacsamana@lorma.edu",
+    "github": "https://github.com/Buris15"
+  },
+  "skills": [
+    { "category": "Languages", "items": ["HTML5", "CSS3", "JavaScript", "Java", "C", "C++", "C#", "Python"] },
+    { "category": "Tools", "items": ["Git", "GitHub", "Figma", "VS Code"] },
+    { "category": "Soft Skills", "items": ["Problem Solving", "Team Collaboration", "Time Management"] }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "Digital Online Shop",
+      "description": "A mobile-first weather app that fetches data from an external API.",
+      "image": "./assets/weather-app.jpg",
+      "tags": ["HTML", "CSS", "JavaScript", "API"],
+      "link": "https://github.com/janedoe/weather-app"
+    },
+    {
+      "id": 2,
+      "title": "Interactive Task Manager",
+      "description": "A to-do list application utilizing local storage to save user data.",
+      "image": "./assets/task-manager.jpg",
+      "tags": ["JavaScript", "DOM Manipulation"],
+      "link": "https://github.com/janedoe/task-manager"
+    }
+  ],
+  "education": [
+    {
+      "id": 1,
+      "title": "Web Development 1",
+      "institution": "University Name",
+      "period": "2026 - Present",
+      "description": "Studying core front-end technologies: HTML semantics, CSS responsive design, and JavaScript DOM manipulation."
+    }
+  ]
+}
