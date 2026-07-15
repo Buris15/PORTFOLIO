@@ -3,78 +3,124 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Adrian Lacsamana — Dynamic Portfolio</title>
+  <title>Adrian Lacsamana | Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header class="floating-header">
-    <div class="logo">Adrian Lacsamana</div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#certifications">Awards</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <button class="hamburger" aria-label="Toggle navigation">&#9776;</button>
-    </nav>
+  <!-- Dark Pill Navigation Navbar -->
+  <header class="navbar-wrapper">
+    <div class="navbar">
+      <div class="logo">Adrian Lacsamana</div>
+      
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Tech Stack</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Experiences</a>
+        <a href="#contact">Contacts</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#" target="_blank" id="nav-github-btn" class="btn-primary">Visit Github</a>
+        <button class="hamburger" aria-label="Toggle navigation">&#9776;</button>
+      </div>
+    </div>
   </header>
 
-  <main class="main-container">
+  <!-- Mobile Dropdown Menu -->
+  <div class="mobile-menu">
+    <a href="#about">About</a>
+    <a href="#skills">Tech Stack</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Experiences</a>
+    <a href="#contact">Contacts</a>
+  </div>
+
+  <main class="main-content">
+    
+    <!-- Split Hero Section -->
     <section id="home" class="hero-section">
-      <img id="hero-img" src="" alt="Adrian Lacsamana">
-      <h1 id="hero-name">Adrian Lacsamana</h1>
-      <h2 id="hero-role">Future IT Professional</h2>
-      <p id="hero-tagline">Building responsive, data-driven web experiences.</p>
-      <div id="hero-socials" class="social-links justify-center"></div>
+      <div class="hero-image-container">
+        <img id="hero-img" src="" alt="Adrian Lacsamana">
+      </div>
+      
+      <div class="hero-text-container">
+        <p class="greeting">Hi! I'm</p>
+        <h1 id="hero-name">Adrian Lacsamana</h1>
+        <h2 id="hero-role">Front End <span class="highlight">Web</span> Developer</h2>
+        
+        <div class="hero-buttons">
+          <a href="#" class="btn-outline">Download CV</a>
+          <a href="#contact" class="btn-outline">Contact Me</a>
+        </div>
+        
+        <div id="hero-socials" class="social-icons"></div>
+      </div>
     </section>
 
-    <section id="about" class="content-block">
-      <h2>About Me</h2>
-      <p>I am an aspiring IT professional studying core front-end and systems development technologies. I focus on structural semantics, responsive layout execution, and data-driven interactions to build robust applications.</p>
+    <!-- Content Sections (Left-aligned flow) -->
+    <section id="about" class="section-block">
+      <div class="section-header">
+        <h2>About Me</h2>
+      </div>
+      <p class="section-text" id="about-text">I am an aspiring IT professional studying core front-end and systems development technologies. I focus on structural semantics, responsive layout execution, and data-driven interactions to build robust applications.</p>
     </section>
 
-    <section id="skills" class="content-block">
-      <h2>Technical & Soft Skills</h2>
+    <section id="skills" class="section-block">
+      <div class="section-header">
+        <h2>Tech Stack & Skills</h2>
+      </div>
       <div id="skills-container" class="skills-grid"></div>
     </section>
 
-    <section id="projects" class="content-block">
-      <h2>My Projects</h2>
-      <div id="project-filters" class="filters-container justify-center"></div>
+    <section id="projects" class="section-block">
+      <div class="section-header">
+        <h2>Projects</h2>
+      </div>
+      <div id="project-filters" class="filters-container"></div>
       <div id="projects-container" class="projects-grid"></div>
     </section>
 
-    <div class="grid-2-col">
-      <section id="certifications" class="content-block">
+    <section id="education" class="section-block">
+      <div class="section-header">
+        <h2>Experiences & Education</h2>
+      </div>
+      <div id="education-container" class="timeline-container"></div>
+    </section>
+
+    <section id="certifications" class="section-block">
+      <div class="section-header">
         <h2>Certifications</h2>
-        <div id="certifications-container" class="timeline"></div>
-      </section>
+      </div>
+      <div id="certifications-container" class="timeline-container"></div>
+    </section>
 
-      <section id="education" class="content-block">
-        <h2>Education</h2>
-        <div id="education-container" class="timeline"></div>
-      </section>
-    </div>
-
-    <section id="contact" class="content-block">
-      <h2>Get In Touch</h2>
-      <p style="margin-bottom: 2rem;">Want to collaborate? Send me a message below.</p>
-      <form id="contact-form" action="#" method="POST">
-        <div class="form-group">
-          <input type="text" id="name" name="name" placeholder="Your Name" required>
-          <input type="email" id="email" name="email" placeholder="Your Email" required>
+    <section id="contact" class="section-block">
+      <div class="section-header">
+        <h2>Contacts</h2>
+      </div>
+      <form id="contact-form" action="#" method="POST" class="contact-form">
+        <div class="input-row">
+          <div class="input-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="John Doe" required>
+          </div>
+          <div class="input-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+          </div>
         </div>
-        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
+        <div class="input-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Let's build something together..." required></textarea>
+        </div>
+        <button type="submit" class="btn-primary form-submit">Send Message</button>
       </form>
     </section>
   </main>
 
   <footer>
-    <div id="footer-socials" class="social-links justify-center"></div>
     <p id="footer-text">&copy; 2026 Adrian Lacsamana. Built for Web Development 1.</p>
   </footer>
 
