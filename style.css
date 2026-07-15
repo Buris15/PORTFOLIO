@@ -297,21 +297,30 @@ a {
 
 .skill-category ul {
   list-style: none;
-  color: var(--text-muted);
-  font-size: 0.95rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
 }
 
 .skill-category li {
-  margin-bottom: 0.6rem;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  transition: color var(--transition), transform var(--transition);
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--primary-btn);
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  transition: all var(--transition);
+  cursor: default;
 }
 
 .skill-category li:hover {
-  color: var(--text-main);
-  transform: translateX(4px);
+  background: var(--primary-btn);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+  border-color: var(--primary-btn);
 }
 
 .skill-category li::before {
