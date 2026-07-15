@@ -1,9 +1,92 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <link rel="stylesheet" href="css/main.css">
-    </head>
-    <body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adrian Lacsamana — Dynamic Portfolio</title>
+  <!-- Link to external responsive stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    </body>
+  <!-- Navigation Layer -->
+  <header>
+    <nav>
+      <!-- Target for JavaScript to inject your name as the logo -->
+      <div class="logo">Adrian Lacsamana</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <!-- Hamburger toggle icon for mobile views -->
+      <button class="hamburger" aria-label="Toggle navigation">&#9776;</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Home / Hero Entry Point -->
+    <section id="home">
+      <h1 id="hero-name">Adrian Lacsamana</h1>
+      <h2 id="hero-role">Future IT Professional</h2>
+      <p id="hero-tagline">Building responsive, data-driven web experiences.</p>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I am an aspiring IT professional studying core front-end and systems development technologies. I focus on structural semantics, responsive layout execution, and data-driven interactions to build robust applications.</p>
+    </section>
+
+    <!-- Skills Container Section -->
+    <section id="skills">
+      <h2>Technical & Soft Skills</h2>
+      <!-- TARGET INJECTION: DOM loops populate categories here -->
+      <div id="skills-container" class="skills-grid"></div>
+    </section>
+
+    <!-- Projects Grid Section -->
+    <section id="projects">
+      <h2>My Projects</h2>
+      <!-- TARGET INJECTION: Cards render dynamically via template strings -->
+      <div id="projects-container" class="projects-grid"></div>
+    </section>
+
+    <!-- Education Timeline Section -->
+    <section id="education">
+      <h2>Education & Experience</h2>
+      <!-- TARGET INJECTION: Chronological events inject here -->
+      <div id="education-container" class="timeline"></div>
+    </section>
+
+    <!-- Non-functional Validated Contact Form -->
+    <section id="contact">
+      <h2>Get In Touch</h2>
+      <p>Want to collaborate? Send me a message below.</p>
+      <form id="contact-form" action="#" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+        
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Global Footer Container -->
+  <footer>
+    <p>&copy; 2026 Adrian Lacsamana. Built for Web Development 1.</p>
+  </footer>
+
+  <!-- Link to functional DOM Manipulation script -->
+  <script src="main.js"></script>
+</body>
 </html>
