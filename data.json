@@ -63,7 +63,7 @@
       "id": 2,
       "title": "Library Management System",
       "description": "Developed a web-based library management system as a Grade 12 research project at LUNHS. The system improves book tracking, borrowing and returning transactions, and library record management.",
-      "image": "./assets/LMS.png",
+      "image": "./assets/Library.png",
       "tags": [
         "HTML",
         "CSS",
