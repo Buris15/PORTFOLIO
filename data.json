@@ -16,7 +16,7 @@
       "id": 1,
       "title": "Digiweb",
       "description": "An Online Digital Selling platform that also handles commissions.",
-      "image": "./assets/digiweb.jpg",
+      "image": "digiweb.png",
       "tags": ["HTML", "CSS", "JavaScript", "API", "Vue"],
       "link": "https://github.com/Buris15/digiweb"
     },
