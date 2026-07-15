@@ -5,7 +5,7 @@
     "tagline": "Building responsive, data-driven web experiences.",
     "email": "adrian.lacsamana@lorma.edu",
     "github": "https://github.com/Buris15",
-    "profilePic": "profile.jpg" 
+    "profilePic": "profile.jpg"
   },
   "skills": [
     {
@@ -31,8 +31,8 @@
         "GitHub",
         "Figma",
         "VS Code",
-        "uiverse",
-        "codepen"
+        "UIverse",
+        "CodePen"
       ]
     },
     {
@@ -62,7 +62,7 @@
     {
       "id": 2,
       "title": "Library Management System",
-      "description": "Developed a web-based library management system as a Grade 12 research project at LUNHS. The system was designed to improve book tracking, borrowing and returning transactions, and the management of library records.",
+      "description": "Developed a web-based library management system as a Grade 12 research project at LUNHS. The system improves book tracking, borrowing and returning transactions, and library record management.",
       "image": "LMS.png",
       "tags": [
         "HTML",
@@ -76,9 +76,14 @@
     },
     {
       "id": 3,
-      "title": "Nova Sole | FIGMA",
-      "description": "Nova Sole is a high-fidelity Figma prototype for a modern footwear and lifestyle e-commerce platform.",
+      "title": "Nova Sole | Figma",
+      "description": "A high-fidelity Figma prototype for a modern footwear and lifestyle e-commerce platform.",
       "image": "Nova.PNG",
+      "tags": [
+        "Figma",
+        "UI/UX",
+        "Prototype"
+      ],
       "link": "https://www.figma.com/proto/ZRwbkHSZrPzS3Wg5yh0v4i/NOVA-SOLE?node-id=0-1"
     }
   ],
@@ -88,7 +93,7 @@
       "title": "Best in Animation",
       "issuer": "LUNHS",
       "date": "2025",
-      "description": "Selected as the Yearbook Team Leader at LUNHS and received the Best in Animation award for leading the team in creating animated visual content for the school yearbook."
+      "description": "Received the Best in Animation award for leading the yearbook team in creating animated visual content."
     }
   ],
   "education": [
@@ -97,14 +102,14 @@
       "title": "Web Development 1",
       "institution": "Lorma Colleges",
       "period": "2025 - Present",
-      "description": "Studying core front-end technologies, including semantic HTML, responsive CSS design, and JavaScript DOM manipulation."
+      "description": "Studying semantic HTML, responsive CSS, and JavaScript DOM manipulation."
     },
     {
       "id": 2,
-      "title": "On The Job Training",
-      "institution": "LUNHS-GOTECH",
+      "title": "On-the-Job Training",
+      "institution": "GOTECH",
       "period": "2025",
-      "description": "During my 10-day OJT at Gotech, I worked as a Graphic Designer, Organizer, and Salesman. I created promotional graphics, organized products and workspaces, and assisted customers with their inquiries and purchases. This experience improved my creativity, communication, teamwork, and customer service skills while giving me practical workplace experience."
+      "description": "Completed a 10-day OJT as a Graphic Designer, Organizer, and Salesman. Created promotional graphics, organized products, and assisted customers while developing creativity, communication, teamwork, and customer service skills."
     }
   ]
 }
