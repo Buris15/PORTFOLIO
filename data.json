@@ -5,7 +5,7 @@
     "tagline": "Building responsive, data-driven web experiences.",
     "email": "adrian.lacsamana@lorma.edu",
     "github": "https://github.com/Buris15",
-    "profilePic": "profile.jpg"
+    "profilePic": "./assets/profile.jpg"
   },
   "skills": [
     {
@@ -49,7 +49,7 @@
       "id": 1,
       "title": "Digiweb",
       "description": "An online digital selling platform that also handles commissions.",
-      "image": "digiweb.png",
+      "image": "./assets/digiweb.png",
       "tags": [
         "HTML",
         "CSS",
@@ -63,7 +63,7 @@
       "id": 2,
       "title": "Library Management System",
       "description": "Developed a web-based library management system as a Grade 12 research project at LUNHS. The system improves book tracking, borrowing and returning transactions, and library record management.",
-      "image": "LMS.png",
+      "image": "./assets/LMS.png",
       "tags": [
         "HTML",
         "CSS",
@@ -78,7 +78,7 @@
       "id": 3,
       "title": "Nova Sole | Figma",
       "description": "A high-fidelity Figma prototype for a modern footwear and lifestyle e-commerce platform.",
-      "image": "Nova.PNG",
+      "image": "./assets/Nova.PNG",
       "tags": [
         "Figma",
         "UI/UX",
@@ -90,7 +90,7 @@
       "id": 4,
       "title": "Web-Based Online Enrollment System",
       "description": "The Web-Based Online Enrollment System enables students to enroll online while helping La Union National High School (LUNHS) manage enrollment faster, more accurately, and with less paperwork.",
-      "image": "Enrollment.PNG",
+      "image": "./assets/Enrollment.PNG",
       "tags": [
         "HTML",
         "CSS",
@@ -104,7 +104,7 @@
       "id": 5,
       "title": "Guidance Management System",
       "description": "The Guidance Management System helps La Union National High School (LUNHS) manage student guidance records, counseling services, and appointments efficiently. It improves record organization, accessibility, and the delivery of guidance services.",
-      "image": "Guidance.PNG",
+      "image": "./assets/Guidance.PNG",
       "tags": [
         "HTML",
         "CSS",
@@ -118,7 +118,7 @@
       "id": 6,
       "title": "Qr-Code Attendace System",
       "description": "The QR Code Attendance System enables La Union National High School (LUNHS) to record student attendance quickly using QR codes. It improves attendance tracking, reduces manual recording, and provides accurate attendance records.",
-      "image": "Attendance.PNG",
+      "image": "./assets/Attendance.PNG",
       "tags": [
         "HTML",
         "CSS",
@@ -155,15 +155,15 @@
     }
   ],
   "graphics": [
-    { "id": 1,  "image": "Blue 101-85 JPG.jpg" },
-    { "id": 2,  "image": "Pink 101-85 jpg.jpg" },
-    { "id": 3,  "image": "Violet 101-85 jpg.jpg" },
-    { "id": 4,  "image": "Yellow 101-85 jpg.jpg" },
-    { "id": 5,  "image": "JBL.jpg" },
-    { "id": 6,  "image": "MSI jpg.jpg" },
-    { "id": 7,  "image": "MSI 2 jpg.jpg" },
-    { "id": 8,  "image": "gpu JPG.jpg" },
-    { "id": 2,  "image": "razer.jpg" }
+    { "id": 1,  "image": "./assets/Blue 101-85 JPG.jpg" },
+    { "id": 2,  "image": "./assets/Pink 101-85 jpg.jpg" },
+    { "id": 3,  "image": "./assets/Violet 101-85 jpg.jpg" },
+    { "id": 4,  "image": "./assets/Yellow 101-85 jpg.jpg" },
+    { "id": 5,  "image": "./assets/JBL.jpg" },
+    { "id": 6,  "image": "./assets/MSI jpg.jpg" },
+    { "id": 7,  "image": "./assets/MSI 2 jpg.jpg" },
+    { "id": 8,  "image": "./assets/gpu JPG.jpg" },
+    { "id": 2,  "image": "./assets/razer.jpg" }
   ],
   "edits": [
     { "id": 1,  "image": "edit1.jpg" },
