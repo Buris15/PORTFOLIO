@@ -71,6 +71,8 @@ body {
   }
 }
 
+
+
 section {
   /* Using will-change safely on layout blocks */
   will-change: transform, opacity;
@@ -197,6 +199,16 @@ p {
 }
 
 /* --- HERO SECTION --- */
+#hero-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--primary);
+  margin-bottom: 1.5rem;
+  background: var(--card-bg); /* Fallback before image loads */
+}
+
 #hero-name {
   font-size: clamp(2.5rem, 7vw, 4.5rem);
   font-weight: 900;
