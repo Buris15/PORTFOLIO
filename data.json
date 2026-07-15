@@ -118,7 +118,7 @@
       "id": 6,
       "title": "Qr-Code Attendace System",
       "description": "The QR Code Attendance System enables La Union National High School (LUNHS) to record student attendance quickly using QR codes. It improves attendance tracking, reduces manual recording, and provides accurate attendance records.",
-      "image": "./assets/Attendance.PNG",
+      "image": "./assets/Attendance.png",
       "tags": [
         "HTML",
         "CSS",
