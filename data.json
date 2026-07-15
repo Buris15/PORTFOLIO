@@ -155,15 +155,22 @@
     }
   ],
   "graphics": [
-    { "id": 1, "title": "Poster Design", "image": "graphic1.jpg" },
-    { "id": 2, "title": "Logo Concept", "image": "graphic2.jpg" }
+    { "id": 1,  "image": "Blue 101-85 JPG.jpg" },
+    { "id": 2,  "image": "Pink 101-85 jpg.jpg" },
+    { "id": 3,  "image": "Violet 101-85 jpg.jpg" },
+    { "id": 4,  "image": "Yellow 101-85 jpg.jpg" },
+    { "id": 5,  "image": "JBL.jpg" },
+    { "id": 6,  "image": "MSI jpg.jpg" },
+    { "id": 7,  "image": "MSI 2 jpg.jpg" },
+    { "id": 8,  "image": "gpu JPG.jpg" },
+    { "id": 2,  "image": "razer.jpg" }
   ],
   "edits": [
-    { "id": 1, "title": "Color Grading", "image": "edit1.jpg" },
-    { "id": 2, "title": "Manipulation", "image": "edit2.jpg" }
+    { "id": 1,  "image": "edit1.jpg" },
+    { "id": 2,  "image": "edit2.jpg" }
   ],
   "pictures": [
-    { "id": 1, "title": "Landscape View", "image": "pic1.jpg" },
-    { "id": 2, "title": "Macro Shot", "image": "pic2.jpg" }
+    { "id": 1,  "image": "pic1.jpg" },
+    { "id": 2,  "image": "pic2.jpg" }
   ]
 }
