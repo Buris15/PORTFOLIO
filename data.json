@@ -23,9 +23,10 @@
     {
       "id": 2,
       "title": "Web-Based Online Enrollment System",
-      "issuer": "LUNHS",
-      "date": "2025",
-      "description": "Developed a web-based online enrollment system as a research project, designed to simplify student registration, manage enrollment records, and make the enrollment process faster and more accessible."
+      "description": "Developed a web-based online enrollment system as our Grade 12 research project at LUNHS, aimed at making student registration and enrollment record management more efficient and accessible.",
+      "image": "Enrollment.png",
+      "tags": ["HTML", "CSS", "JS", "PHP", "SQL"],
+      "link": ""
     }
   ],
   "certifications": [
