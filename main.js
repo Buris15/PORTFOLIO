@@ -1,18 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
-  
   // --- 1. MOBILE MENU ---
   const hamburger = document.querySelector('.hamburger');
   const navLinks = document.querySelector('.nav-links');
 
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-  });
-
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('active');
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
     });
-  });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+  }
 
   let allProjects = [];
 
@@ -32,14 +33,11 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .catch(error => console.error('Data pipeline error:', error));
 
-
   // --- 3. RENDER FUNCTIONS ---
-
   function renderPersonalInfo(info) {
     document.getElementById('hero-name').textContent = info.name;
     document.getElementById('hero-role').textContent = info.role;
     document.getElementById('hero-tagline').textContent = info.tagline;
-    document.querySelector('.logo').textContent = info.name;
     document.getElementById('hero-img').src = info.profilePic;
 
     const socialHtml = `
@@ -47,9 +45,12 @@ document.addEventListener('DOMContentLoaded', () => {
       <a href="mailto:${info.email}" class="social-btn">Email ✉</a>
     `;
     document.getElementById('hero-socials').innerHTML = socialHtml;
-    document.getElementById('footer-socials').innerHTML = socialHtml;
+    
+    const footerSocials = document.getElementById('footer-socials');
+    if (footerSocials) footerSocials.innerHTML = socialHtml;
 
-    document.querySelector('footer p').innerHTML = `&copy; ${new Date().getFullYear()} ${info.name}. Built for Web Development 1.`;
+    const footerText = document.getElementById('footer-text');
+    if (footerText) footerText.innerHTML = `&copy; ${new Date().getFullYear()} ${info.name}. Built for Web Development 1.`;
   }
 
   function renderSkills(skillsData) {
@@ -62,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function renderProjectFilters(projects) {
     const filterContainer = document.getElementById('project-filters');
+    if (!filterContainer) return;
     
     const uniqueTags = new Set();
     projects.forEach(p => p.tags.forEach(tag => uniqueTags.add(tag)));
@@ -93,6 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function renderProjects(projectsData) {
     const container = document.getElementById('projects-container');
+    if (!container) return;
     container.innerHTML = ''; 
     
     projectsData.forEach(project => {
@@ -101,9 +104,9 @@ document.addEventListener('DOMContentLoaded', () => {
         <article class="project-card">
           <img src="${project.image}" alt="${project.title}">
           <h3>${project.title}</h3>
-          <p>${project.description}</p>
-          <div class="project-tags">${tags}</div>
-          <a href="${project.link}" target="_blank">View Code</a>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;">${project.description}</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">${tags}</div>
+          <a href="${project.link}" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600;">View Code &rarr;</a>
         </article>
       `;
     });
@@ -111,28 +114,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function renderCertifications(certsData) {
     const container = document.getElementById('certifications-container');
-    if (!certsData) return;
+    if (!certsData || !container) return;
     
     certsData.forEach(cert => {
       container.innerHTML += `
-        <article class="timeline-item">
-          <h3>${cert.title}</h3>
-          <strong>${cert.issuer}</strong> | <span>${cert.date}</span>
-          <p>${cert.description}</p>
-        </article>
+        <div class="timeline-item">
+          <strong>${cert.title}</strong>
+          <span>${cert.issuer} | ${cert.date}</span>
+          <p style="margin-top: 0.5rem; font-size: 0.95rem;">${cert.description}</p>
+        </div>
       `;
     });
   }
 
   function renderEducation(educationData) {
     const container = document.getElementById('education-container');
+    if (!educationData || !container) return;
     educationData.forEach(edu => {
       container.innerHTML += `
-        <article class="timeline-item">
-          <h3>${edu.title}</h3>
-          <strong>${edu.institution}</strong> | <span>${edu.period}</span>
-          <p>${edu.description}</p>
-        </article>
+        <div class="timeline-item">
+          <strong>${edu.title}</strong>
+          <span>${edu.institution} | ${edu.period}</span>
+          <p style="margin-top: 0.5rem; font-size: 0.95rem;">${edu.description}</p>
+        </div>
       `;
     });
   }
