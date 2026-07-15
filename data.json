@@ -7,25 +7,65 @@
     "github": "https://github.com/Buris15"
   },
   "skills": [
-    { "category": "Languages", "items": ["HTML5", "CSS3", "JavaScript", "Java", "C", "C++", "C#", "Python"] },
-    { "category": "Tools", "items": ["Git", "GitHub", "Figma", "VS Code"] },
-    { "category": "Soft Skills", "items": ["Problem Solving", "Team Collaboration", "Time Management"] }
+    {
+      "category": "Languages",
+      "items": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Java",
+        "C",
+        "C++",
+        "C#",
+        "Python"
+      ]
+    },
+    {
+      "category": "Tools",
+      "items": [
+        "Git",
+        "GitHub",
+        "Figma",
+        "VS Code"
+      ]
+    },
+    {
+      "category": "Soft Skills",
+      "items": [
+        "Problem Solving",
+        "Team Collaboration",
+        "Time Management"
+      ]
+    }
   ],
   "projects": [
     {
       "id": 1,
       "title": "Digiweb",
-      "description": "An Online Digital Selling platform that also handles commissions.",
+      "description": "An online digital selling platform that also handles commissions.",
       "image": "digiweb.png",
-      "tags": ["HTML", "CSS", "JavaScript", "API", "Vue"],
+      "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "API",
+        "Vue"
+      ],
       "link": "https://github.com/Buris15/digiweb"
     },
     {
       "id": 2,
       "title": "Library Management System",
-      "description": "Developed a web-based library management system as a research project at LUNHS, designed to improve book tracking, borrowing and returning transactions, and the management of library records.",
+      "description": "Developed a web-based library management system as a Grade 12 research project at LUNHS. The system was designed to improve book tracking, borrowing and returning transactions, and the management of library records.",
       "image": "LMS.png",
-      "tags": ["HTML", "CSS", "SCSS", "JS", "PHP", "SQL"],
+      "tags": [
+        "HTML",
+        "CSS",
+        "SCSS",
+        "JavaScript",
+        "PHP",
+        "SQL"
+      ],
       "link": "https://github.com/Buris15/LMS"
     }
   ],
@@ -35,8 +75,7 @@
       "title": "Best in Animation",
       "issuer": "LUNHS",
       "date": "2025",
-      "description": "Selected as the Yearbook Team Leader at LUNHS and received the “Best in Animation” award for leading the team in creating animated visual content for the school yearbook.
-"
+      "description": "Selected as the Yearbook Team Leader at LUNHS and received the Best in Animation award for leading the team in creating animated visual content for the school yearbook."
     }
   ],
   "education": [
@@ -45,7 +84,7 @@
       "title": "Web Development 1",
       "institution": "Lorma Colleges",
       "period": "2025 - Present",
-      "description": "Studying core front-end technologies: HTML semantics, CSS responsive design, and JavaScript DOM manipulation."
+      "description": "Studying core front-end technologies, including semantic HTML, responsive CSS design, and JavaScript DOM manipulation."
     }
   ]
 }
