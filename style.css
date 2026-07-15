@@ -1,0 +1,221 @@
+/* --- GLOBAL TOKENS & DESIGN SYSTEM --- */
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --bg-color: #f9f9f9;
+  --text-color: #333;
+  --card-bg: #ffffff;
+}
+
+/* Base Reset Layer */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* --- NAVIGATION LAYOUT --- */
+header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: none; /* Mobile first hidden state */
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  text-align: center;
+  padding-top: 1rem;
+}
+
+/* Interactive class triggered by DOM list toggle */
+.nav-links.active {
+  display: flex;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.nav-links a:hover {
+  color: var(--secondary-color);
+}
+
+.hamburger {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* --- SECTIONS & WRAPPERS --- */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+section {
+  margin-bottom: 4rem;
+}
+
+h1, h2 {
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --- MOBILE FIRST STRUCTURE (1 Column Layouts) --- */
+.skills-grid, .projects-grid, .timeline {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+}
+
+.skill-category, .project-card, .timeline-item {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.project-card img {
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.tag {
+  background: var(--secondary-color);
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+/* View Link Styling */
+.project-card a {
+  display: inline-block;
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+.project-card a:hover {
+  text-decoration: underline;
+}
+
+/* --- CONTACT INTERACTION SURFACE --- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+}
+
+input, textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+  width: 100%;
+}
+
+button[type="submit"] {
+  background: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background 0.2s ease;
+  align-self: flex-start;
+}
+
+button[type="submit"]:hover {
+  background: #2980b9;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: var(--primary-color);
+  color: white;
+  margin-top: 4rem;
+}
+
+/* --- LAYOUT ADAPTIVITY MEDIA BREAKPOINTS --- */
+
+/* Tablet Breakpoint Details */
+@media (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+  
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    padding-top: 0;
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop Width Optimization */
+@media (min-width: 1200px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
