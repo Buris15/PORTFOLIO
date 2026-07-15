@@ -113,6 +113,20 @@
         "PHP"
       ],
       "link": "https://github.com/Buris15/Guidance"
+    },
+     {
+      "id": 6,
+      "title": "Qr-Code Attendace System",
+      "description": "The QR Code Attendance System enables La Union National High School (LUNHS) to record student attendance quickly using QR codes. It improves attendance tracking, reduces manual recording, and provides accurate attendance records.",
+      "image": "Attendance.PNG",
+      "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "SQL",
+        "PHP"
+      ],
+      "link": "https://github.com/Buris15/Qr-Code-Attendance-System"
     }
   ],
   "certifications": [
@@ -126,14 +140,14 @@
   ],
   "education": [
     {
-      "id": 1,
+      "id": 2,
       "title": "Web Development 1",
       "institution": "Lorma Colleges",
       "period": "2025 - Present",
       "description": "Studying semantic HTML, responsive CSS, and JavaScript DOM manipulation."
     },
     {
-      "id": 2,
+      "id": 3,
       "title": "On-the-Job Training",
       "institution": "GOTECH",
       "period": "2025",
