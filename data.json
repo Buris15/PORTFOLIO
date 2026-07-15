@@ -14,8 +14,8 @@
   "projects": [
     {
       "id": 1,
-      "title": "Digital Online Shop",
-      "description": "A mobile-first weather app that fetches data from an external API.",
+      "title": "Digiweb",
+      "description": "An Online Digital Selling, It can also do comission",
       "image": "./assets/weather-app.jpg",
       "tags": ["HTML", "CSS", "JavaScript", "API"],
       "link": "https://github.com/janedoe/weather-app"
